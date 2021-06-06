@@ -542,9 +542,9 @@ public class Game implements MouseListener, ActionListener, WindowListener {
                 else if (cellSolution.equals("F")) {
                     // Is it correctly flagged?
                     if (!cells[x][y].getMine()) {
-                        buttons[x][y].setBackground(Color.blue);
+                        buttons[x][y].setIcon(gui.getIconFlagg());
                     } else
-                        buttons[x][y].setBackground(Color.green);
+                        buttons[x][y].setIcon(gui.getIconFlag());
                 }
 
             }

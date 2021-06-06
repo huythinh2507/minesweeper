@@ -39,7 +39,7 @@ public class UI extends JFrame
     private Icon mine;
     private Icon flag;
     private Icon tile;
-
+    private Icon flagg;
 
     
 
@@ -420,6 +420,8 @@ public class UI extends JFrame
             d = new ImageIcon(getClass().getResource("/resources/tile1.png"));
             tile = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
 
+            d = new ImageIcon(getClass().getResource("/resources/flag.png"));
+            flagg = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
         //-------------------------------------------------------//
 
     }
@@ -443,6 +445,10 @@ public class UI extends JFrame
         return tile;
     }
 
+    public Icon getIconFlagg()
+    {
+        return flagg;
+    }
 
 
     //---------------------------------------------------------------------//

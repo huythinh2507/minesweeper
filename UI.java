@@ -111,7 +111,7 @@ public class UI extends JFrame
         timePassedLabel.setOpaque(true);
 
         JLabel iT = new JLabel("",SwingConstants.CENTER);
-        iT.setIcon(new ImageIcon(getClass().getResource("/resources/images/clock1.2.png")));
+        iT.setIcon(new ImageIcon(getClass().getResource("/resources/clock1.2.png")));
 
         timePassedPanel.add(iT, BorderLayout.NORTH);
         timePassedPanel.add(timePassedLabel, BorderLayout.CENTER);
@@ -136,7 +136,7 @@ public class UI extends JFrame
         setMines(m);
 
         JLabel mT = new JLabel("", SwingConstants.CENTER);
-        mT.setIcon(new ImageIcon(getClass().getResource("/resources/images/mine1.png")));
+        mT.setIcon(new ImageIcon(getClass().getResource("/resources/mine1.png")));
 
         minesPanel.add(minesLabel, BorderLayout.SOUTH);
         minesPanel.add(mT, BorderLayout.CENTER);
@@ -195,7 +195,7 @@ public class UI extends JFrame
         background.add(p, BorderLayout.CENTER);
 
 
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/mine1.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/mine1.png")));
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
@@ -411,16 +411,16 @@ public class UI extends JFrame
         ImageIcon d;
 
             URL url;
-            d = new ImageIcon(getClass().getResource("/resources/images/redmine.png"));
+            d = new ImageIcon(getClass().getResource("/resources/redmine.png"));
             redMine = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
 
-            d = new ImageIcon(getClass().getResource("/resources/images/mine1.png"));
+            d = new ImageIcon(getClass().getResource("/resources/mine1.png"));
             mine = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
 
-            d = new ImageIcon(getClass().getResource("/resources/images/flag1.png"));
+            d = new ImageIcon(getClass().getResource("/resources/flag1.png"));
             flag = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
 
-            d = new ImageIcon(getClass().getResource("/resources/images/tile1.png"));
+            d = new ImageIcon(getClass().getResource("/resources/tile1.png"));
             tile = resizeIcon(d, bWidth - bOffset, bHeight - bOffset);
 
         //-------------------------------------------------------//

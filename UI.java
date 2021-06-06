@@ -10,14 +10,14 @@ import java.net.URL;
 
 public class UI extends JFrame
 {
-    //buttons
+    
     private JButton[][] buttons;
 
-    // Number of Buttons
+
     private int rows;
     private int cols;
 
-    // Labels
+ 
     private JLabel minesLabel;
     private int mines;
 
@@ -26,7 +26,7 @@ public class UI extends JFrame
     private int timePassed;
     private boolean stopTimer;
 
-    // ProjectName
+    
     private final String FRAME_TITLE = "Minesweeper - DSA_Project";
 
     private int FRAME_WIDTH = 520;
@@ -34,14 +34,14 @@ public class UI extends JFrame
     private int FRAME_LOC_X = 430;
     private int FRAME_LOC_Y = 50;
 
-    // Icons
+    
     private Icon redMine;
     private Icon mine;
     private Icon flag;
     private Icon tile;
 
 
-    // Menu Bar and Items
+    
 
     private JMenuBar menuBar;
     private JMenu gameMenu;
@@ -58,19 +58,19 @@ public class UI extends JFrame
 
         buttons = new JButton [rows][cols];
 
-        // Set frame
+       
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
         setTitle(FRAME_TITLE);
         setLocation(FRAME_LOC_X, FRAME_LOC_Y);
 
-        // The layout of the frame:
+      
 
         JPanel gameBoard;
         JPanel tmPanel;
         JPanel scorePanel;
 
         //----------------GAME BOARD---------------------//
-        // Build the "gameBoard".
+  
         gameBoard = new JPanel();
         gameBoard.setLayout(new GridLayout(rows,cols,0,0));
 
@@ -78,16 +78,16 @@ public class UI extends JFrame
         {
             for( int x=0 ; x<cols ; x++ )
             {
-                // Set button text.
+               
                 buttons[x][y] = new JButton("");
 
-                // Set button name (x,y).
+      
                 buttons[x][y].setName(Integer.toString(x) + "," + Integer.toString(y));
                 buttons[x][y].setFont(new Font("Serif", Font.BOLD, 24));
 
                 buttons[x][y].setBorder(BorderFactory.createLineBorder(Color.black, 1, true));
 
-                // Add this button to the gameboard.
+                
                 gameBoard.add(buttons[x][y]);
             }
         }
@@ -99,7 +99,7 @@ public class UI extends JFrame
         JPanel timePassedPanel = new JPanel();
         timePassedPanel.setLayout(new BorderLayout(10,0));
 
-        // Initialize the time passed label.
+     
         this.timePassedLabel = new JLabel ("  0  " , SwingConstants.CENTER);
         timePassedLabel.setFont(new Font("Serif", Font.BOLD, 20));
 
@@ -125,7 +125,6 @@ public class UI extends JFrame
         minesPanel.setLayout(new BorderLayout(10,0));
 
 
-        // Initialize mines label.
         this.minesLabel = new JLabel ("  0  " , SwingConstants.CENTER);
         minesLabel.setFont(new Font("Serif", Font.BOLD, 20));
         minesLabel.setBorder(loweredetched);
@@ -142,7 +141,6 @@ public class UI extends JFrame
         minesPanel.add(mT, BorderLayout.CENTER);
         minesPanel.setOpaque(false);
 
-        // Build the "tmPanel".
         tmPanel = new JPanel();
         tmPanel.setLayout(new BorderLayout(0,20));
 
@@ -153,7 +151,7 @@ public class UI extends JFrame
         //--------------------------------------------//
 
 
-        //------------------Menu--------------------------//
+        //--------------------------------------------//
         menuBar = new JMenuBar();
 
         gameMenu = new JMenu("Menu");
@@ -202,9 +200,9 @@ public class UI extends JFrame
 
     //-----------------------------------------------------------------//
 
-    //-----------------------Related to Timer------------------------//
+    //-----------------------------------------------//
 
-    // Starts the timer
+   
     public void startTimer()
     {
         stopTimer = false;
@@ -217,10 +215,10 @@ public class UI extends JFrame
                 {
                     timePassed++;
 
-                    // Update the time passed label.
+                    //
                     timePassedLabel.setText("  " + timePassed + "  ");
 
-                    // Wait 1 second.
+                    // 
                     try{
                         sleep(1000);
                     }
@@ -270,9 +268,9 @@ public class UI extends JFrame
         enableAll();
     }
 
-    //------------------HELPER FUNCTIONS-----------------------//
+    //-----------------------------------------//
 
-    //Makes buttons clickable
+    
     public void enableAll()
     {
         for( int x=0 ; x<cols ; x++ )
@@ -284,7 +282,7 @@ public class UI extends JFrame
         }
     }
 
-    //Makes buttons non-clickable
+  
     public void disableAll()
     {
         for( int x=0 ; x<cols ; x++ )
@@ -297,7 +295,7 @@ public class UI extends JFrame
     }
 
 
-    //Resets the content of all buttons
+ 
     public void hideAll()
     {
         for( int x=0 ; x<cols ; x++ )
@@ -312,13 +310,13 @@ public class UI extends JFrame
     }
 
 
-    //---------------SET LISTENERS--------------------------//
+    //-----------------------------------------//
 
     public void setButtonListeners(Game game)
     {
         addWindowListener(game);
 
-        // Set listeners for all buttons in the grid in gameBoard
+       
         for( int x=0 ; x<cols ; x++ )
         {
             for( int y=0 ; y<rows ; y++ )
@@ -327,7 +325,6 @@ public class UI extends JFrame
             }
         }
 
-        // Set listeners for menu items in menu bar
         newGame.addActionListener(game);
         statistics.addActionListener(game);
         exit.addActionListener(game);
@@ -338,7 +335,7 @@ public class UI extends JFrame
     }
 
 
-    //-----------------GETTERS AND SETTERS--------------------//
+    //-------------------------------------//
 
     public JButton[][] getButtons()
     {
@@ -351,7 +348,7 @@ public class UI extends JFrame
     }
 
 
-    //----------------------SET LOOK------------------------------//
+    //----------------------------------------------------//
 
     public static void setLook(String look)
     {
@@ -392,7 +389,7 @@ public class UI extends JFrame
         return mines;
     }
 
-    //--------------------Related to Icons----------------------------//
+    //------------------------------------------------//
     private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight)
     {
         Image img = icon.getImage();
@@ -402,7 +399,7 @@ public class UI extends JFrame
 
     public void setIcons()
     {
-        //---------------------Set Icons-----------------------------//
+        //--------------------------------------------------//
 
         int bOffset = buttons[0][1].getInsets().left;
         int bWidth = buttons[0][1].getWidth();
